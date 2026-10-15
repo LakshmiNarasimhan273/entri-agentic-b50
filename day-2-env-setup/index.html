@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emberlane — Small-batch hot sauce</title>
+<meta name="description" content="Small-batch hot sauces made with fresh chiles and fermented for 30 days. Free shipping over $40.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1b33; --tomato:#ff4a2a; --butter:#ffd84a; --mint:#c4ead6; --sky:#bcd4ff; --paper:#fffef9;
+  --display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.02em}
+h1{font-size:clamp(2.8rem,7.5vw,5.6rem);font-weight:800}
+h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800}
+h3{font-size:1.35rem;font-weight:800;letter-spacing:-.01em}
+
+/* buttons */
+.btn{display:inline-block;font:600 1rem var(--body);text-decoration:none;padding:14px 26px;border-radius:999px;border:2px solid var(--ink);background:var(--tomato);color:var(--ink);cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:var(--paper)}
+.btn.small{padding:9px 18px;font-size:.92rem;box-shadow:3px 3px 0 var(--ink)}
+
+/* top */
+.promo{background:var(--ink);color:var(--butter);text-align:center;font-size:.92rem;padding:8px 16px;font-weight:600}
+header{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.6rem;text-decoration:none;letter-spacing:-.03em}
+.logo span{color:var(--tomato)}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:600}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:var(--tomato)}
+.cart{font-weight:600;border:2px solid var(--ink);border-radius:999px;padding:7px 16px;background:var(--butter);text-decoration:none}
+
+/* hero */
+.hero{background:var(--butter);border-bottom:2px solid var(--ink);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-top:72px;padding-bottom:72px}
+.hero p.lead{font-size:1.25rem;max-width:30em;margin:22px 0 32px}
+.hero .actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero .proof{margin-top:28px;font-size:.95rem;font-weight:600}
+.stage{position:relative;height:440px}
+.stage .sun{position:absolute;inset:6% 4%;background:var(--tomato);border-radius:50%;border:2px solid var(--ink)}
+.stage .b{position:absolute;bottom:0;width:170px;filter:drop-shadow(5px 5px 0 var(--ink))}
+.stage .b1{left:8%;transform:rotate(-8deg)}
+.stage .b2{left:34%;width:200px;z-index:2;bottom:16px}
+.stage .b3{right:6%;transform:rotate(9deg)}
+
+/* shared sections */
+section{padding:88px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.head p{max-width:26em}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{border:2px solid var(--ink);border-radius:22px;background:#fff;display:flex;flex-direction:column;overflow:hidden}
+.card .pic{height:230px;display:flex;align-items:flex-end;justify-content:center;padding-top:20px;border-bottom:2px solid var(--ink);position:relative}
+.card .pic svg{width:100px}
+.tag{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--paper);font-size:.8rem;font-weight:600;padding:3px 10px;border-radius:999px}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .body p{font-size:.95rem;color:#47455f}
+.heat{display:flex;gap:4px;align-items:center;font-size:.85rem;font-weight:600;margin-top:4px}
+.heat i{width:14px;height:14px;border-radius:50%;border:2px solid var(--ink);background:#fff}
+.heat i.on{background:var(--tomato)}
+.card .buy{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:14px}
+.price{font-family:var(--display);font-weight:800;font-size:1.4rem}
+
+/* why */
+.why{background:var(--ink);color:var(--paper)}
+.why .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.why h3{color:var(--butter);margin-bottom:10px}
+.why p{color:#d8d6ea}
+.why h2{max-width:14em;margin-bottom:52px}
+
+/* bundle */
+.bundle .box{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);border-radius:28px;overflow:hidden;box-shadow:8px 8px 0 var(--ink)}
+.bundle .l{background:var(--mint);padding:48px}
+.bundle .r{background:var(--sky);padding:48px;display:flex;flex-direction:column;justify-content:center;gap:16px;border-left:2px solid var(--ink)}
+.bundle ul{list-style:none;margin:20px 0 28px}
+.bundle li{padding:8px 0;border-bottom:2px dashed rgba(28,27,51,.35);display:flex;justify-content:space-between;font-weight:600}
+.was{text-decoration:line-through;opacity:.6}
+
+/* reviews */
+.reviews .grid{grid-template-columns:repeat(3,1fr)}
+blockquote{border:2px solid var(--ink);border-radius:22px;padding:26px;background:#fff}
+blockquote p{font-size:1.08rem;margin-bottom:14px}
+blockquote footer{font-weight:600;font-size:.92rem}
+
+/* signup */
+.signup{background:var(--tomato);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.signup .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.signup form{display:flex;gap:10px;flex-wrap:wrap}
+.signup input{flex:1 1 220px;font:inherit;padding:14px 20px;border-radius:999px;border:2px solid var(--ink);background:var(--paper)}
+.signup small{display:block;margin-top:10px;font-weight:600}
+.signup .btn{background:var(--butter)}
+
+footer.site{padding:56px 0 40px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px}
+.fgrid h4{font-family:var(--display);margin-bottom:10px}
+.fgrid ul{list-style:none;display:grid;gap:6px;font-size:.95rem}
+.fgrid a{text-decoration:none}.fgrid a:hover{text-decoration:underline}
+.legal{font-size:.88rem;border-top:2px solid var(--ink);padding-top:20px}
+
+@media (max-width:920px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap,.signup .wrap,.bundle .box{grid-template-columns:1fr}
+  .bundle .r{border-left:0;border-top:2px solid var(--ink)}
+  .why .cols,.reviews .grid{grid-template-columns:1fr}
+  .stage{height:360px}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .nav ul{display:none}
+  .grid{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .bundle .l,.bundle .r{padding:30px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- bottle shape, reused with different colors -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bottle" viewBox="0 0 100 240">
+    <rect x="38" y="4" width="24" height="26" rx="4" fill="#1c1b33"/>
+    <rect x="42" y="28" width="16" height="22" fill="#fffef9" stroke="#1c1b33" stroke-width="3"/>
+    <path d="M42 50 C42 70 10 78 10 110 V222 a14 14 0 0 0 14 14 H76 a14 14 0 0 0 14-14 V110 C90 78 58 70 58 50 Z" fill="var(--c,#ff4a2a)" stroke="#1c1b33" stroke-width="4"/>
+    <rect x="18" y="124" width="64" height="84" rx="8" fill="#fffef9" stroke="#1c1b33" stroke-width="3"/>
+    <circle cx="50" cy="152" r="14" fill="var(--c,#ff4a2a)" stroke="#1c1b33" stroke-width="3"/>
+    <rect x="28" y="176" width="44" height="6" rx="3" fill="#1c1b33"/>
+    <rect x="34" y="188" width="32" height="5" rx="2.5" fill="#1c1b33" opacity=".4"/>
+  </symbol>
+</svg>
+
+<div class="promo">Free shipping on orders over $40 · Ships in 2 days</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Ember<span>lane</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#why">How we make it</a></li>
+        <li><a href="#bundle">Bundles</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+    <a class="cart" href="#shop">Cart (0)</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Hot sauce that tastes like the pepper.</h1>
+        <p class="lead">Fresh chiles, real fruit and 30 days of fermentation. No powders, no thickeners, no mystery heat.</p>
+        <div class="actions">
+          <a class="btn" href="#shop">Shop sauces</a>
+          <a class="btn alt" href="#bundle">Build a trio</a>
+        </div>
+        <p class="proof">★★★★★ 4.9 from 3,200+ reviews</p>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <div class="sun"></div>
+        <svg class="b b1" viewBox="0 0 100 240" style="--c:#ffd84a"><use href="#bottle"/></svg>
+        <svg class="b b2" viewBox="0 0 100 240" style="--c:#ff4a2a"><use href="#bottle"/></svg>
+        <svg class="b b3" viewBox="0 0 100 240" style="--c:#7ccba0"><use href="#bottle"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="shop">
+    <div class="wrap">
+      <div class="head">
+        <h2>Pick your heat</h2>
+        <p>Every bottle is 5 fl oz and made in batches of 400. When a batch sells out, the next one is 3 weeks away.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="pic" style="background:var(--butter)"><span class="tag">Bestseller</span><svg viewBox="0 0 100 240" style="--c:#ff4a2a"><use href="#bottle"/></svg></div>
+          <div class="body">
+            <h3>Red Habanero</h3>
+            <p>Roasted carrot, lime and a slow, building burn.</p>
+            <div class="heat" aria-label="Heat level 4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+            <div class="buy"><span class="price">$12</span><button class="btn small">Add to cart</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pic" style="background:var(--mint)"><svg viewBox="0 0 100 240" style="--c:#7ccba0"><use href="#bottle"/></svg></div>
+          <div class="body">
+            <h3>Green Jalapeño</h3>
+            <p>Tomatillo, cilantro and garlic. Good on eggs, better on tacos.</p>
+            <div class="heat" aria-label="Heat level 2 of 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+            <div class="buy"><span class="price">$11</span><button class="btn small">Add to cart</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pic" style="background:var(--sky)"><span class="tag">New</span><svg viewBox="0 0 100 240" style="--c:#f6a23c"><use href="#bottle"/></svg></div>
+          <div class="body">
+            <h3>Mango Scotch Bonnet</h3>
+            <p>Ripe mango and allspice with a bright, fruity heat.</p>
+            <div class="heat" aria-label="Heat level 4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+            <div class="buy"><span class="price">$13</span><button class="btn small">Add to cart</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pic" style="background:#f1d9ff"><span class="tag">Hottest</span><svg viewBox="0 0 100 240" style="--c:#7b3fa0"><use href="#bottle"/></svg></div>
+          <div class="body">
+            <h3>Black Garlic Ghost</h3>
+            <p>Smoky, sweet and serious. Start with one drop.</p>
+            <div class="heat" aria-label="Heat level 5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+            <div class="buy"><span class="price">$14</span><button class="btn small">Add to cart</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <h2>Slow-made in a small kitchen</h2>
+      <div class="cols">
+        <div><h3>Fermented 30 days</h3><p>We salt-ferment whole chiles in crocks, which builds flavor that vinegar alone can't.</p></div>
+        <div><h3>Six ingredients or fewer</h3><p>Chiles, fruit or vegetables, garlic, salt, vinegar and spices. Every label lists them all.</p></div>
+        <div><h3>Grown by people we know</h3><p>Our peppers come from three family farms, picked within a day of arriving at our kitchen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bundle" id="bundle">
+    <div class="wrap">
+      <div class="box">
+        <div class="l">
+          <h2>The Trio</h2>
+          <p style="margin-top:12px">Can't choose? Get three bottles and save 20%.</p>
+          <ul>
+            <li><span>Red Habanero</span><span>$12</span></li>
+            <li><span>Green Jalapeño</span><span>$11</span></li>
+            <li><span>Mango Scotch Bonnet</span><span>$13</span></li>
+          </ul>
+        </div>
+        <div class="r">
+          <p><span class="was">$36</span></p>
+          <p class="price" style="font-size:3rem">$29</p>
+          <p>Ships free. Swap in any sauce at checkout.</p>
+          <div><a class="btn" href="#shop">Add the trio</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>People are putting it on everything</h2></div>
+      <div class="grid">
+        <blockquote><p>The habanero tastes like actual pepper. I stopped buying the grocery store stuff after one bottle.</p><footer>Priya S., Austin</footer></blockquote>
+        <blockquote><p>The mango one is on my fried chicken every Friday. My whole family fights over the last drops.</p><footer>Marcus T., Leeds</footer></blockquote>
+        <blockquote><p>Ghost pepper that still tastes like food. I've reordered four times.</p><footer>Elena R., Toronto</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup">
+    <div class="wrap">
+      <div>
+        <h2>Get 10% off your first order</h2>
+        <p style="margin-top:10px">Plus first access to new batches before they sell out.</p>
+      </div>
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Check your inbox';">
+        <label for="email" style="position:absolute;left:-9999px">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+        <button class="btn" type="submit">Get my code</button>
+        <small>One email a month. Unsubscribe anytime.</small>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="logo" href="#top">Ember<span>lane</span></a><p style="margin-top:10px;max-width:22em">Small-batch hot sauce, made in Portland, Oregon.</p></div>
+      <div><h4>Shop</h4><ul><li><a href="#shop">All sauces</a></li><li><a href="#bundle">Bundles</a></li><li><a href="#">Gift cards</a></li></ul></div>
+      <div><h4>Help</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">YouTube</a></li></ul></div>
+    </div>
+    <p class="legal">© 2026 Emberlane. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
