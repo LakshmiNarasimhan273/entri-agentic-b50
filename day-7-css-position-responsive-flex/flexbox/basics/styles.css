@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    /* default direction: row */
+    justify-content: space-between;
+    /* justify-content: it applies the space horizontally*/
+    align-items: center;
+    /* align-items: it applies the space vertically */
+    background-color: lightseagreen;
+}
+
+.links{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
