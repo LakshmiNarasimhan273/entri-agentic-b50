@@ -1,0 +1,16 @@
+.box{
+    background-color: royalblue;
+    color: white;
+
+    text-align: center;
+    font-size: 1rem;
+}
+
+.container{
+    display: grid;
+
+    /* column */
+    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: 100px 200px 100px;
+    gap: 15px;
+}
