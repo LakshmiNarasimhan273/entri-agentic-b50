@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Support & FAQ - Shopsmart</title>
+  <meta name="description" content="Need help with your order, shipping, or returns? Browse our knowledge base or send us a message.">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Shopsmart</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Catalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="support.html">Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <a href="auth.html" class="nav-link py-2">Sign In</a>
+            <a href="cart.html" class="nav-link position-relative d-inline-flex align-items-center gap-1">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span>Cart</span>
+              <span id="cart-badge" class="badge rounded-pill bg-danger ms-1">3</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="display-6 fw-bold text-dark mb-2">Help Center &amp; Support</h1>
+        <p class="lead text-muted mx-auto" style="max-width: 600px;">Find quick answers to common questions or reach out directly to our dedicated customer support team.</p>
+      </div>
+
+      <!-- Category Cards -->
+      <section class="mb-5" aria-label="Support Topics">
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <div class="card h-100 p-3 text-center border shadow-sm">
+              <div class="fs-2 mb-2">📦</div>
+              <h2 class="h6 fw-bold text-dark">Shipping &amp; Delivery</h2>
+              <p class="small text-muted mb-0">Tracking, transit times, and international rules</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 p-3 text-center border shadow-sm">
+              <div class="fs-2 mb-2">🔄</div>
+              <h2 class="h6 fw-bold text-dark">Returns &amp; Refunds</h2>
+              <p class="small text-muted mb-0">30-day return policy and instant refund timelines</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 p-3 text-center border shadow-sm">
+              <div class="fs-2 mb-2">💳</div>
+              <h2 class="h6 fw-bold text-dark">Payment &amp; Promos</h2>
+              <p class="small text-muted mb-0">Card security, UPI support, and coupon codes</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 p-3 text-center border shadow-sm">
+              <div class="fs-2 mb-2">👤</div>
+              <h2 class="h6 fw-bold text-dark">Account &amp; Security</h2>
+              <p class="small text-muted mb-0">Password reset, sessions, and profile settings</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Accordion (6 FAQs) -->
+      <section class="mb-5" aria-label="Frequently Asked Questions">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2 class="h4 fw-bold text-dark mb-4 text-center">Frequently Asked Questions</h2>
+            <div class="accordion shadow-sm" id="supportFaqAccordion">
+              
+              <!-- FAQ 1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    How does free shipping work?
+                  </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#supportFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    We offer automatic free standard shipping on all orders where the subtotal is $50.00 or greater. For orders below $50.00, a flat shipping fee of $5.00 applies.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    How do I apply promotional discount codes?
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#supportFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    You can enter your promotional code in the coupon field in your Shopping Cart or at Checkout. Use code <strong>SAVE10</strong> to get an instant 10% discount on your order subtotal.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    What payment methods are supported?
+                  </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#supportFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    We accept major Credit and Debit cards (Visa, MasterCard), instant UPI payments, and Cash on Delivery (COD). In our testing environment, you can use mock card <code>4242 4242 4242 4242</code> for guaranteed approval.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    How do I track my order status?
+                  </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#supportFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    Visit your Profile page and check the Active Orders tab. Orders progress through four stages: Pending, Processing, Shipped, and Delivered.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    What is your return policy?
+                  </button>
+                </h3>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#supportFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    We offer a 30-day hassle-free return window for all unused items in their original packaging. Simply contact our support team with your order number to initiate a return.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 6 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSix">
+                  <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Is my account data secure?
+                  </button>
+                </h3>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#supportFaqAccordion">
+                  <div class="accordion-body text-muted">
+                    Yes. All authentication and session tokens follow industry-standard security guidelines, preventing unauthorized access to your account and orders.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="py-4" aria-label="Contact Customer Support Form">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card p-4 p-md-5 border shadow-sm">
+              <h2 class="h4 fw-bold text-dark mb-2 text-center">Send Us a Message</h2>
+              <p class="text-muted small text-center mb-4">Our support team usually replies within 2 to 4 business hours.</p>
+              
+              <form action="#" method="POST" novalidate id="supportContactForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label small fw-semibold">Your Name</label>
+                    <input type="text" class="form-control" id="contactName" name="name" placeholder="Alex Morgan" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="contactEmail" class="form-label small fw-semibold">Email Address</label>
+                    <input type="email" class="form-control" id="contactEmail" name="email" placeholder="alex@example.com" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="contactSubject" class="form-label small fw-semibold">Subject</label>
+                    <input type="text" class="form-control" id="contactSubject" name="subject" placeholder="Question regarding Order #ORD-9821" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="contactMessage" class="form-label small fw-semibold">Message</label>
+                    <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Please describe how we can assist you..." required></textarea>
+                  </div>
+                  <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-primary px-5 py-2 fw-semibold">Submit Inquiry</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-md-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="fs-5 fw-bold text-dark">Shopsmart</span>
+          </div>
+          <p class="text-muted small">Your modern, trusted destination for electronics, fashion, home essentials, and curated accessories. Fast delivery and premium quality guaranteed.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h2 class="fs-6 fw-bold text-dark mb-3">Shop</h2>
+          <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="product-detail.html">Featured Deal</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h2 class="fs-6 fw-bold text-dark mb-3">Account</h2>
+          <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
+            <li><a href="profile.html">My Orders</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="auth.html">Sign In / Register</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="fs-6 fw-bold text-dark mb-3">Customer Support</h2>
+          <p class="small text-muted mb-2">Have questions about your order or our policies? We are here to help.</p>
+          <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
+            <li><a href="support.html">Help Center &amp; FAQ</a></li>
+            <li><a href="index.html">About Shopsmart</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center text-muted small">
+        <p class="mb-2 mb-sm-0">&copy; 2026 Shopsmart Inc. All rights reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="support.html">Privacy Policy</a>
+          <a href="support.html">Terms of Service</a>
+          <a href="support.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

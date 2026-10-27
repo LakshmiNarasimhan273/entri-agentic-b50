@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="grad-p007" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#db2777" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#9d174d" stop-opacity="1" />
+    </linearGradient>
+    <filter id="shadow-p007" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="#f8fafc" rx="16"/>
+  <rect x="25" y="25" width="350" height="250" rx="14" fill="url(#grad-p007)" filter="url(#shadow-p007)"/>
+  <circle cx="200" cy="120" r="50" fill="#ffffff" fill-opacity="0.2" />
+  <text x="200" y="135" font-size="48" text-anchor="middle" dominant-baseline="central">👕</text>
+  <text x="200" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Wool Sweater</text>
+  <text x="200" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#ffffff" fill-opacity="0.85" text-anchor="middle">Fashion</text>
+</svg>

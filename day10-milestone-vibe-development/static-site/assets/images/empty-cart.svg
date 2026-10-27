@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="g-empty-cart" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="16" fill="url(#g-empty-cart)"/>
+  <circle cx="700" cy="100" r="160" fill="#ffffff" fill-opacity="0.1" />
+  <circle cx="100" cy="350" r="120" fill="#ffffff" fill-opacity="0.08" />
+  <text x="80" y="150" font-size="56">🛒</text>
+  <text x="80" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="700" fill="#ffffff">Your Cart is Empty</text>
+  <text x="80" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#ffffff" fill-opacity="0.9">Explore our catalog and find something great!</text>
+</svg>

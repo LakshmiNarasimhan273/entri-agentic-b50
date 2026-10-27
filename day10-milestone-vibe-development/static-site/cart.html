@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - Shopsmart</title>
+  <meta name="description" content="Review your selected items, adjust quantities, apply discount coupon SAVE10, and proceed to checkout.">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Shopsmart</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Catalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="support.html">Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <a href="auth.html" class="nav-link py-2">Sign In</a>
+            <a href="cart.html" class="nav-link active position-relative d-inline-flex align-items-center gap-1" aria-current="page">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span>Cart</span>
+              <span id="cart-badge" class="badge rounded-pill bg-danger ms-1">3</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 fw-bold text-dark mb-0">Shopping Cart (3 items)</h1>
+        <a href="#empty-cart" class="text-primary small fw-semibold text-decoration-none" id="previewEmptyLink">Preview empty state</a>
+      </div>
+
+      <!-- Empty State Container (Targeted via CSS :target when visiting cart.html#empty-cart) -->
+      <section id="empty-cart" class="text-center py-5 bg-white rounded-4 border shadow-sm my-4" aria-label="Empty Cart State">
+        <img src="assets/images/empty-cart.svg" alt="Empty Shopping Cart" class="img-fluid mb-4" width="360" height="180">
+        <h2 class="h4 fw-bold text-dark mb-2">Your Cart is Empty</h2>
+        <p class="text-muted mb-4 mx-auto" style="max-width: 480px;">Looks like you haven't added anything to your cart yet. Explore our latest arrivals and top-rated picks.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="products.html" class="btn btn-primary px-4 py-2">Continue Shopping</a>
+          <a href="cart.html" class="btn btn-outline-secondary px-4 py-2">View Sample Cart</a>
+        </div>
+      </section>
+
+      <!-- Active Cart Items Wrapper (hidden when #empty-cart is targeted) -->
+      <section id="cart-active-wrapper" aria-label="Active Cart Items">
+        <div class="row g-4">
+          <!-- Item Table -->
+          <div class="col-lg-8">
+            <div class="card border shadow-sm">
+              <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col" class="ps-4">Product</th>
+                      <th scope="col">Price</th>
+                      <th scope="col" style="min-width: 140px;">Quantity</th>
+                      <th scope="col" class="text-end pe-4">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Item 1: Wireless Headphones -->
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="assets/images/p001.svg" alt="Wireless Headphones" class="rounded" width="60" height="45">
+                          <div>
+                            <h2 class="fs-6 fw-bold mb-1"><a href="product-detail.html" class="text-dark text-decoration-none">Wireless Headphones</a></h2>
+                            <span class="text-muted small">Electronics &bull; Battery 30h</span>
+                            <div class="mt-1">
+                              <button type="button" class="btn btn-link text-danger p-0 small text-decoration-none" aria-label="Remove Wireless Headphones">Remove</button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="fw-semibold text-dark">$79.99</td>
+                      <td>
+                        <div class="input-group input-group-sm quantity-control">
+                          <button class="btn btn-outline-secondary" type="button" aria-label="Decrease quantity">-</button>
+                          <input type="number" class="form-control text-center" value="1" min="1" max="10" aria-label="Quantity for Wireless Headphones">
+                          <button class="btn btn-outline-secondary" type="button" aria-label="Increase quantity">+</button>
+                        </div>
+                      </td>
+                      <td class="text-end pe-4 fw-bold text-dark">$79.99</td>
+                    </tr>
+
+                    <!-- Item 2: Classic Denim Jacket -->
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="assets/images/p005.svg" alt="Classic Denim Jacket" class="rounded" width="60" height="45">
+                          <div>
+                            <h2 class="fs-6 fw-bold mb-1"><a href="product-detail.html" class="text-dark text-decoration-none">Classic Denim Jacket</a></h2>
+                            <span class="text-muted small">Fashion &bull; Size M</span>
+                            <div class="mt-1">
+                              <button type="button" class="btn btn-link text-danger p-0 small text-decoration-none" aria-label="Remove Classic Denim Jacket">Remove</button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="fw-semibold text-dark">$59.00</td>
+                      <td>
+                        <div class="input-group input-group-sm quantity-control">
+                          <button class="btn btn-outline-secondary" type="button" aria-label="Decrease quantity">-</button>
+                          <input type="number" class="form-control text-center" value="1" min="1" max="10" aria-label="Quantity for Classic Denim Jacket">
+                          <button class="btn btn-outline-secondary" type="button" aria-label="Increase quantity">+</button>
+                        </div>
+                      </td>
+                      <td class="text-end pe-4 fw-bold text-dark">$59.00</td>
+                    </tr>
+
+                    <!-- Item 3: Polarized Sunglasses -->
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="assets/images/p013.svg" alt="Polarized Sunglasses" class="rounded" width="60" height="45">
+                          <div>
+                            <h2 class="fs-6 fw-bold mb-1"><a href="product-detail.html" class="text-dark text-decoration-none">Polarized Sunglasses</a></h2>
+                            <span class="text-muted small">Accessories &bull; UV400</span>
+                            <div class="mt-1">
+                              <button type="button" class="btn btn-link text-danger p-0 small text-decoration-none" aria-label="Remove Polarized Sunglasses">Remove</button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="fw-semibold text-dark">$29.50</td>
+                      <td>
+                        <div class="input-group input-group-sm quantity-control">
+                          <button class="btn btn-outline-secondary" type="button" aria-label="Decrease quantity">-</button>
+                          <input type="number" class="form-control text-center" value="1" min="1" max="10" aria-label="Quantity for Polarized Sunglasses">
+                          <button class="btn btn-outline-secondary" type="button" aria-label="Increase quantity">+</button>
+                        </div>
+                      </td>
+                      <td class="text-end pe-4 fw-bold text-dark">$29.50</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Totals Panel & Promo Code -->
+          <div class="col-lg-4">
+            <div class="card p-4 border shadow-sm">
+              <h2 class="h5 fw-bold text-dark mb-3">Order Summary</h2>
+
+              <!-- Promo Code Input -->
+              <form action="#" method="POST" class="mb-4">
+                <label for="promoCode" class="form-label small fw-semibold">Promo Code</label>
+                <div class="input-group">
+                  <input type="text" class="form-control text-uppercase" id="promoCode" placeholder="Try SAVE10">
+                  <button class="btn btn-outline-primary" type="submit">Apply</button>
+                </div>
+                <div class="form-text small text-success mt-1">Code SAVE10 applied: 10% discount!</div>
+              </form>
+
+              <!-- Price Breakdown (§3.5 rules: Subtotal $168.49, Discount 10% $16.85, Shipping $0, Tax 8% $13.48, Total $165.12) -->
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Subtotal (3 items)</span>
+                <span class="fw-semibold text-dark">$168.49</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2 small text-success">
+                <span>Discount (SAVE10 - 10%)</span>
+                <span>-$16.85</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Shipping (Over $50)</span>
+                <span class="text-success fw-semibold">FREE ($0.00)</span>
+              </div>
+              <div class="d-flex justify-content-between mb-3 small">
+                <span class="text-muted">Estimated Tax (8%)</span>
+                <span class="fw-semibold text-dark">$13.48</span>
+              </div>
+
+              <hr>
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <span class="fs-5 fw-bold text-dark">Estimated Total</span>
+                <span class="fs-4 fw-bold text-primary">$165.12</span>
+              </div>
+
+              <a href="checkout.html" class="btn btn-primary w-100 py-2 fw-semibold">Proceed to Checkout</a>
+              <a href="products.html" class="btn btn-outline-secondary w-100 py-2 mt-2 fw-semibold">Continue Shopping</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-md-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="fs-5 fw-bold text-dark">Shopsmart</span>
+          </div>
+          <p class="text-muted small">Your modern, trusted destination for electronics, fashion, home essentials, and curated accessories. Fast delivery and premium quality guaranteed.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h2 class="fs-6 fw-bold text-dark mb-3">Shop</h2>
+          <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="product-detail.html">Featured Deal</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h2 class="fs-6 fw-bold text-dark mb-3">Account</h2>
+          <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
+            <li><a href="profile.html">My Orders</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="auth.html">Sign In / Register</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="fs-6 fw-bold text-dark mb-3">Customer Support</h2>
+          <p class="small text-muted mb-2">Have questions about your order or our policies? We are here to help.</p>
+          <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
+            <li><a href="support.html">Help Center &amp; FAQ</a></li>
+            <li><a href="index.html">About Shopsmart</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center text-muted small">
+        <p class="mb-2 mb-sm-0">&copy; 2026 Shopsmart Inc. All rights reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="support.html">Privacy Policy</a>
+          <a href="support.html">Terms of Service</a>
+          <a href="support.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* Shopsmart - Design System & Custom Styles */
+:root {
+  --ss-primary: #4f46e5;
+  --ss-primary-dark: #3730a3;
+  --ss-accent: #f59e0b;
+  --ss-bg: #f8fafc;
+  --ss-surface: #ffffff;
+  --ss-text: #0f172a;
+  --ss-muted: #64748b;
+  --ss-success: #16a34a;
+  --ss-danger: #dc2626;
+  --ss-radius: 0.75rem;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--ss-bg);
+  color: var(--ss-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Brand styling */
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--ss-primary) !important;
+  font-size: 1.4rem;
+}
+
+.navbar {
+  background-color: var(--ss-surface) !important;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.nav-link {
+  color: var(--ss-muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--ss-primary);
+}
+
+.nav-link.active {
+  color: var(--ss-primary) !important;
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--ss-primary);
+  border-color: var(--ss-primary);
+  color: #ffffff;
+  border-radius: var(--ss-radius);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--ss-primary-dark);
+  border-color: var(--ss-primary-dark);
+}
+
+.btn-accent {
+  background-color: var(--ss-accent);
+  border-color: var(--ss-accent);
+  color: #ffffff;
+  border-radius: var(--ss-radius);
+  font-weight: 600;
+}
+
+.btn-accent:hover {
+  background-color: #d97706;
+  border-color: #d97706;
+  color: #ffffff;
+}
+
+.btn-outline-primary {
+  color: var(--ss-primary);
+  border-color: var(--ss-primary);
+  border-radius: var(--ss-radius);
+  font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--ss-primary);
+  color: #ffffff;
+}
+
+/* Cards */
+.card {
+  background-color: var(--ss-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--ss-radius);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
+}
+
+.card-img-top {
+  border-top-left-radius: calc(var(--ss-radius) - 1px);
+  border-top-right-radius: calc(var(--ss-radius) - 1px);
+  object-fit: cover;
+  background-color: #f1f5f9;
+}
+
+/* Badges */
+.badge-status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.badge-status-processing {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.badge-status-shipped {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+.badge-status-delivered {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+/* Custom Cart Badge */
+.cart-badge-pill {
+  background-color: var(--ss-primary);
+  color: #ffffff;
+  font-size: 0.75rem;
+}
+
+/* Empty cart target rule (CSS :target) */
+#empty-cart {
+  display: none;
+}
+
+#empty-cart:target {
+  display: block;
+}
+
+#empty-cart:target ~ #cart-active-wrapper {
+  display: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--ss-surface);
+  border-top: 1px solid #e2e8f0;
+  color: var(--ss-muted);
+}
+
+footer a {
+  color: var(--ss-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--ss-primary);
+}
+
+/* Hero section */
+.hero-gradient {
+  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Product gallery */
+.gallery-thumbnail {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: var(--ss-radius);
+  transition: border-color 0.2s ease;
+}
+
+.gallery-thumbnail.active,
+.gallery-thumbnail:hover {
+  border-color: var(--ss-primary);
+}
+
+/* Quantity input styling */
+.quantity-control {
+  max-width: 140px;
+}
+
+/* Clean forms */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--ss-primary);
+  box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.15);
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
