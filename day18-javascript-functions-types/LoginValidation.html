@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkLogin(username,password)
+        {
+          let cusername="admin"
+          let cpwd="admin@123"
+          if(username==cusername && password==cpwd)
+          {
+            alert("welcome to our webpage")
+          }
+          else{
+            alert("invalid login")
+          }
+        }
+        let username=prompt("enter the username");
+        let password=prompt("enter the passwod");
+        checkLogin(username,password);
+    </script>
+</body>
+</html>
